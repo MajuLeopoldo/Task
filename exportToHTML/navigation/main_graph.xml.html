@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>main_graph.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #bcbec4;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main_graph.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s2">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s2">=&quot;utf-8&quot;</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;navigation </span><span class="s1">xmlns:android</span><span class="s2">=&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="s1">xmlns:app</span><span class="s2">=&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+    <span class="s1">xmlns:tools</span><span class="s2">=&quot;http://schemas.android.com/tools&quot;</span>
+    <span class="s1">android:id</span><span class="s2">=&quot;@+id/main_graph&quot;</span>
+    <span class="s1">app:startDestination</span><span class="s2">=&quot;@id/splashFragment&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;fragment</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/splashFragment&quot;</span>
+        <span class="s1">android:name</span><span class="s2">=&quot;com.maria.task.ui.SplashFragment&quot;</span>
+        <span class="s1">android:label</span><span class="s2">=&quot;fragment_splash&quot;</span>
+        <span class="s1">tools:layout</span><span class="s2">=&quot;@layout/fragment_splash&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;action</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/action_splashFragment_to_authentication&quot;</span>
+            <span class="s1">app:destination</span><span class="s2">=&quot;@id/authentication&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;/fragment&gt;</span>
+
+    <span class="s0">&lt;navigation</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/authentication&quot;</span>
+        <span class="s1">app:startDestination</span><span class="s2">=&quot;@id/loginFragment&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s4">&lt;!-- LOGIN --&gt;</span>
+        <span class="s0">&lt;fragment</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/loginFragment&quot;</span>
+            <span class="s1">android:name</span><span class="s2">=&quot;com.maria.task.ui.LoginFragment&quot;</span>
+            <span class="s1">android:label</span><span class="s2">=&quot;fragment_login&quot;</span>
+            <span class="s1">tools:layout</span><span class="s2">=&quot;@layout/fragment_login&quot;</span><span class="s0">&gt;</span>
+
+            <span class="s0">&lt;action</span>
+                <span class="s1">android:id</span><span class="s2">=&quot;@+id/action_loginFragment_to_registerFragment&quot;</span>
+                <span class="s1">app:destination</span><span class="s2">=&quot;@id/registerFragment&quot; </span><span class="s0">/&gt;</span>
+
+            <span class="s0">&lt;action</span>
+                <span class="s1">android:id</span><span class="s2">=&quot;@+id/action_loginFragment_to_recoverAccountFragment&quot;</span>
+                <span class="s1">app:destination</span><span class="s2">=&quot;@id/recoverAccountFragment&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/fragment&gt;</span>
+
+        <span class="s4">&lt;!-- REGISTER --&gt;</span>
+        <span class="s0">&lt;fragment</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/registerFragment&quot;</span>
+            <span class="s1">android:name</span><span class="s2">=&quot;com.maria.task.ui.auth.RegisterFragment&quot;</span>
+            <span class="s1">android:label</span><span class="s2">=&quot;fragment_register&quot;</span>
+            <span class="s1">tools:layout</span><span class="s2">=&quot;@layout/fragment_register&quot;</span><span class="s0">&gt;</span>
+
+            <span class="s0">&lt;action</span>
+                <span class="s1">android:id</span><span class="s2">=&quot;@+id/action_registerFragment_to_loginFragment&quot;</span>
+                <span class="s1">app:destination</span><span class="s2">=&quot;@id/loginFragment&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/fragment&gt;</span>
+
+        <span class="s4">&lt;!-- RECOVER --&gt;</span>
+        <span class="s0">&lt;fragment</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/recoverAccountFragment&quot;</span>
+            <span class="s1">android:name</span><span class="s2">=&quot;com.maria.task.ui.auth.RecoverAccountFragment&quot;</span>
+            <span class="s1">android:label</span><span class="s2">=&quot;fragment_recover_account&quot;</span>
+            <span class="s1">tools:layout</span><span class="s2">=&quot;@layout/fragment_recover_account&quot;</span><span class="s0">&gt;</span>
+
+            <span class="s0">&lt;action</span>
+                <span class="s1">android:id</span><span class="s2">=&quot;@+id/action_recoverAccountFragment_to_loginFragment&quot;</span>
+                <span class="s1">app:destination</span><span class="s2">=&quot;@id/loginFragment&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/fragment&gt;</span>
+        <span class="s0">&lt;action</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/action_global_homeFragment&quot;</span>
+            <span class="s1">app:destination</span><span class="s2">=&quot;@id/homeFragment&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;/navigation&gt;</span>
+    <span class="s0">&lt;fragment</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/homeFragment&quot;</span>
+        <span class="s1">android:name</span><span class="s2">=&quot;com.maria.task.ui.HomeFragment&quot;</span>
+        <span class="s1">android:label</span><span class="s2">=&quot;fragment_home&quot;</span>
+        <span class="s1">tools:layout</span><span class="s2">=&quot;@layout/fragment_home&quot; </span><span class="s0">/&gt;</span>
+
+<span class="s0">&lt;/navigation&gt;</span>
+
+
+</pre>
+</body>
+</html>
